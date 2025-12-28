@@ -3,7 +3,7 @@ export const config = { runtime: 'edge' };
 export default async function (req: Request) {
   if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 });
 
-  const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+  const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
   if (!apiKey) return new Response(JSON.stringify({ error: 'Missing API Key' }), { status: 500 });
 
   try {
@@ -43,4 +43,5 @@ export default async function (req: Request) {
   } catch (err) {
     return new Response(JSON.stringify({ error: 'Server Error' }), { status: 500 });
   }
+
 }
