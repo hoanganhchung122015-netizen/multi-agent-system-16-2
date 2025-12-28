@@ -8,7 +8,7 @@ import {
   Lightbulb, Target, RefreshCcw
 } from 'lucide-react';
 import { Layout } from '../components/Layout';
-import CameraScanner from '.../components/CameraScanner';
+import CameraScanner from '../components/CameraScanner';
 import { Subject, AgentType, FullAnalysisResponse, DiaryEntry } from '../types';
 import { fetchFullAnalysis, optimizeImage, speakText } from '../services/geminiService';
 
