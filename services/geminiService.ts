@@ -71,4 +71,9 @@ export const fetchFullAnalysis = async (
 export const speakText = (text: string) => {
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'vi-VN';
+    utterance.rate = 1.1;
+    window.speechSynthesis.speak(utterance);
+  }
+};
